@@ -1,0 +1,51 @@
+.timer_wrapper {
+  width: 600px;
+  height: 400px;
+  background-color: bisque;
+  color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0px 0px 10px 0px #444444;
+  -moz-box-shadow: inset 0px 0px 10px 0px #444444;
+  box-shadow: inset 0px 0px 10px 0px #444444;
+}
+
+.controls_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  align-items: center;
+}
+.timer_display {
+  color: rgb(81, 21, 138);
+}
+
+.timer_display_running {
+  color: blueviolet;
+}
+
+.timer_button {
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.timer_button:hover {
+  background-color: rgb(52, 108, 212);
+}
+
+.timer_button:active {
+  background-color: rgb(21, 95, 231);
+}
+
+.timer_button:disabled {
+  background-color: darkgray;
+}
