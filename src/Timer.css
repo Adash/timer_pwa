@@ -6,6 +6,7 @@
   align-items: center;
   gap: 15px;
   border-radius: 6px;
+  padding-top: 60%;
 }
 
 .controls_wrapper {
@@ -15,7 +16,8 @@
   align-items: center;
 }
 .timer_display {
-  font-size: 63px;
+  font-size: 83px;
+  margin-bottom: 60px;
   color: rgb(94, 92, 230);
 }
 
