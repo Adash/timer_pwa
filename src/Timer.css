@@ -1,17 +1,11 @@
 .timer_wrapper {
-  width: 600px;
-  height: 400px;
-  background-color: bisque;
-  color: cornflowerblue;
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   border-radius: 6px;
-  -webkit-box-shadow: inset 0px 0px 10px 0px #444444;
-  -moz-box-shadow: inset 0px 0px 10px 0px #444444;
-  box-shadow: inset 0px 0px 10px 0px #444444;
 }
 
 .controls_wrapper {
@@ -21,25 +15,28 @@
   align-items: center;
 }
 .timer_display {
-  color: rgb(81, 21, 138);
+  font-size: 63px;
+  color: rgb(94, 92, 230);
 }
 
 .timer_display_running {
-  color: blueviolet;
+  color: rgb(191, 90, 242);
 }
 
 .timer_button {
   border: none;
-  background-color: cornflowerblue;
+  background-color: rgb(10, 132, 255);
   color: white;
   height: 60px;
-  width: 60px;
+  width: 80px;
   border-radius: 20px;
+  /* font-size: 20px; */
+  padding: 0px;
   cursor: pointer;
 }
 
 .timer_button:hover {
-  background-color: rgb(52, 108, 212);
+  background-color: rgb(50, 173, 230);
 }
 
 .timer_button:active {
@@ -47,5 +44,6 @@
 }
 
 .timer_button:disabled {
-  background-color: darkgray;
+  background-color: whitesmoke;
+  color: gray;
 }
