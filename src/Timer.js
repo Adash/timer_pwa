@@ -15,6 +15,9 @@ const Timer = (props) => {
   const [seconds, setSeconds] = React.useState(0);
   const [timeElapsed, setTimeElapsed] = React.useState(0);
   const [timerInterval, setTimerInterval] = React.useState(undefined);
+  const [dataStorage, setDataStorage] = React.useState([
+    { name: 'first', time: 0 },
+  ]);
 
   const startTimer = () => {
     setRunning(true);
@@ -40,30 +43,56 @@ const Timer = (props) => {
     clearInterval(timerInterval);
     setSeconds(0);
   };
+
+  const saveTime = () => {
+    setDataStorage((prevState) => [
+      ...prevState,
+      { name: 'newTime', time: seconds },
+    ]);
+  };
+
   return (
-    <div className="timer_wrapper">
-      <h2 className={`timer_display ${running && 'timer_display_running'}`}>
-        {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}:
-        {getOnlySeconds(seconds)}
-      </h2>
-      <div className="controls_wrapper">
-        <button
-          className="timer_button"
-          onClick={startTimer}
-          disabled={running}
-        >
-          <FeatherIcon icon="play" size="24" />
-        </button>
-        <button
-          className="timer_button"
-          onClick={stopTimer}
-          disabled={!running}
-        >
-          <FeatherIcon icon="pause" size="24" />
-        </button>
-        <button className="timer_button" onClick={resetTimer}>
-          <FeatherIcon icon="x-octagon" size="24" />
-        </button>
+    <div className="wrapper">
+      <div className="results_wrapper">
+        <ul>
+          {dataStorage.length &&
+            dataStorage.map((entry) => (
+              <li>
+                name: <span>{entry.name}</span> - time:{' '}
+                <span>{entry.time}</span>
+              </li>
+            ))}
+        </ul>
+      </div>
+      <div className="timer_wrapper">
+        <h2 className={`timer_display ${running && 'timer_display_running'}`}>
+          {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}:
+          {getOnlySeconds(seconds)}
+        </h2>
+        <div className="controls_wrapper">
+          <button
+            className="timer_button"
+            onClick={startTimer}
+            disabled={running}
+          >
+            <FeatherIcon icon="play" size="24" />
+          </button>
+          <button
+            className="timer_button"
+            onClick={stopTimer}
+            disabled={!running}
+          >
+            <FeatherIcon icon="pause" size="24" />
+          </button>
+          <button className="timer_button" onClick={resetTimer}>
+            <FeatherIcon icon="x-octagon" size="24" />
+          </button>
+        </div>
+        <div className="saveButton_wrapper">
+          <button className="saveButton" onClick={saveTime}>
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );

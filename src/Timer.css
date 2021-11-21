@@ -1,4 +1,19 @@
+.wrapper {
+}
+
+.results_wrapper {
+  /* background-color: thistle; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 50vh;
+  font-size: 20px;
+}
+
 .timer_wrapper {
+  /* background-color: yellowgreen; */
   color: whitesmoke;
   display: flex;
   flex-direction: column;
@@ -6,7 +21,8 @@
   align-items: center;
   gap: 15px;
   border-radius: 6px;
-  padding-top: 30vh;
+  /* padding-top: 30vh; */
+  height: 40vh;
 }
 
 .controls_wrapper {
@@ -15,6 +31,29 @@
   width: 300px;
   align-items: center;
 }
+
+.saveButton_wrapper {
+  /* background-color: thistle; */
+  padding-top: 20px;
+}
+
+.saveButton {
+  border: none;
+  background-color: rgb(95, 197, 0);
+  color: white;
+  height: 60px;
+  width: 120px;
+  border-radius: 20px;
+  /* font-size: 20px; */
+  padding: 0px;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.saveButton:hover {
+  background-color: rgb(53, 109, 0);
+}
+
 .timer_display {
   font-size: 83px;
   margin-bottom: 60px;
